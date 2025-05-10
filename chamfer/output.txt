@@ -1,0 +1,3 @@
+ACE0 Chamfer loss: 37.020493
+Colmap Chamfer loss: 28.388336
+Openmvg Chamfer loss: 429.248322

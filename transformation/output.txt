@@ -1,0 +1,24 @@
+ace0:
+RegistrationResult with fitness=1.000000e+00, inlier_rmse=4.207448e+00, and correspondence_set size of 99918
+Access transformation to get result.
+Transformation is: 
+[[ 9.42019487e-01 -1.22524555e-01  3.11677957e-01  1.53507823e+02]
+ [ 3.34712566e-01  3.14367634e-01 -8.88796440e-01 -8.49216337e+01]
+ [ 1.00391528e-02  9.41485913e-01  3.36744324e-01  1.89643914e+02]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.00000000e+00]]
+colmap:
+RegistrationResult with fitness=1.000000e+00, inlier_rmse=4.350983e+00, and correspondence_set size of 520723
+Access transformation to get result.
+Transformation is: 
+[[ 7.52874643e-01 -5.75169302e-01 -3.20793725e-01  1.43258266e+02]
+ [ 6.03092501e-01  7.97114878e-01 -1.29597075e-02 -6.99851886e+01]
+ [ 2.62665581e-01 -1.84453639e-01  9.47323826e-01  1.82368236e+02]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.00000000e+00]]
+openmvg:
+RegistrationResult with fitness=1.000000e+00, inlier_rmse=2.539760e-01, and correspondence_set size of 1476958
+Access transformation to get result.
+Transformation is: 
+[[-9.30962307e-01  5.11071217e-02 -3.60708623e-01  1.42617183e+02]
+ [ 3.64292920e-01  9.69872982e-02 -9.26628305e-01 -6.93456034e+01]
+ [-1.15693836e-02 -9.94090804e-01 -1.08389450e-01  1.83510286e+02]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.00000000e+00]]

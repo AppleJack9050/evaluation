@@ -3,22 +3,25 @@ import torch
 import numpy as np
 import open3d as o3d
 
-col_pcd = o3d.io.read_point_cloud("../3d_model/openmvs_glacier.ply")
-gt_pcd = o3d.io.read_point_cloud("../3d_model/gt_gl.ply")
+col_pcd = o3d.io.read_point_cloud("/home/otter77/3d_model/openmvg_trans.ply")
+gt_pcd = o3d.io.read_point_cloud("/home/otter77/3d_model/gt_gl.ply")
 
 # 提取点云坐标，并转换为 NumPy 数组
 source_points = np.asarray(col_pcd.points)
 target_points = np.asarray(gt_pcd.points)
 
+print("CUDA is", torch.cuda.is_available())
+
 # 转换 NumPy 数组为 PyTorch Tensor
-source_tensor = torch.tensor(source_points, dtype=torch.float32).unsqueeze(0)  # (1, N, 3)
-target_tensor = torch.tensor(target_points, dtype=torch.float32).unsqueeze(0)  #
+source_tensor = torch.tensor(source_points, dtype=torch.float32).unsqueeze(0).cuda()  # (1, N, 3)
+target_tensor = torch.tensor(target_points, dtype=torch.float32).unsqueeze(0).cuda()  #
 
 # By default: average over points then batches
-loss_chamfer, (dist_src_tgt, dist_tgt_src) = chamfer_distance(
+loss_chamfer, _ = chamfer_distance(
     source_tensor, target_tensor,
     batch_reduction="mean",    # or "sum" / "none"
     point_reduction="mean"     # or "sum" / "none"
 )
 
-print(f"Openmvg Chamfer loss: {loss_chamfer.item():.6f}")
+with open("output.txt", "a") as file:
+    file.write(f"Openmvg Chamfer loss: {loss_chamfer.item():.6f}\n")
